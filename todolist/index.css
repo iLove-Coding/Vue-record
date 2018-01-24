@@ -1,0 +1,154 @@
+body {
+    margin: 0;
+    background-color: gainsboro;
+}
+
+ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+.wrap {
+    margin-top: 100px;
+}
+
+.wrap .head {
+    margin: 0 auto;
+    width: 900px;
+    height: 208px;
+    text-align: center;
+}
+
+.wrap .head .title {
+    font: 80px/90px "微软雅黑";
+    color: burlywood;
+}
+
+.wrap .head input {
+    height: 60px;
+    width: 700px;
+    text-indent: 10px;
+    font-size: 20px;
+    outline: none;
+    border-radius: 10px;
+    border: solid 1px gray;
+}
+
+.wrap .todo-list {
+    width: 700px;
+    margin: 0 auto;
+}
+
+.wrap .todo-list .item {
+    height: 60px;
+    font: 24px/56px "微软雅黑";
+    color: gray;
+    background-color: white;
+    border-radius: 10px;
+    margin-top: 1px;
+    box-sizing: border-box;
+    padding: 0 10px;
+    border-bottom: solid 1px gray;
+}
+
+.wrap .todo-list .item .input-font {
+    width: 100%;
+    height: 45px;
+    position: relative;
+    top: 3px;
+    font: 24px/60px "微软雅黑";
+    outline: none;
+}
+
+.wrap .todo-list .item:hover .close-icon {
+    display: inline-block;
+}
+
+.wrap .select-icon {
+    float: left;
+    width: 30px;
+    height: 30px;
+    border-radius: 15px;
+    box-sizing: border-box;
+    border: solid 1px gainsboro;
+    position: relative;
+    top: 10px;
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+.wrap .selected-icon {
+    float: left;
+    width: 30px;
+    height: 30px;
+    border-radius: 15px;
+    box-sizing: border-box;
+    border: solid 1px gainsboro;
+    position: relative;
+    top: 10px;
+    margin-right: 10px;
+    background-color: gainsboro;
+    cursor: pointer;
+}
+
+.wrap .item .close-icon {
+    float: right;
+    margin-right: 15px;
+    color: gainsboro;
+    cursor: pointer;
+    display: none;
+}
+
+.wrap .item .font-del {
+    text-decoration: line-through;
+}
+
+.wrap .foot {
+    width: 700px;
+    height: 50px;
+    margin: 0 auto;
+    font: 20px/50px "微软雅黑";
+    color: gray;
+    background-color: white;
+    border-radius: 10px;
+    text-indent: 10px;
+    font: 16px/35px "微软雅黑";
+    box-sizing: border-box;
+    padding: 0 10px;
+}
+
+.wrap .foot .left-icon {
+    float: left;
+    margin-right: 50px;
+    margin-top: 5px;
+}
+
+.wrap .foot .icon-item {
+    float: left;
+    margin-left: 50px;
+    margin-top: 5px;
+}
+
+.wrap .foot a {
+    text-decoration: none;
+    color: gray;
+    padding: 5px;
+    box-sizing: border-box;
+}
+
+.wrap .foot button {
+    margin-left: 50px;
+    border: none;
+    border-radius: 10px;
+    font: 16px/30px "微软雅黑";
+    cursor: pointer;
+    margin-top: 8px;
+    outline: none;
+}
+
+.wrap .foot .selected {
+    border: solid 1px gray;
+    padding: 5px;
+    border-radius: 10px;
+}

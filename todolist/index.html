@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="./index.css">
+    <script src="./vue.min.js"></script>
+</head>
+
+<body>
+    <div class="wrap" id="wrap" v-cloak>
+        <header class="head">
+            <h1 class="title">todos</h1>
+            <input type="text" class="inputMsg" placeholder="你需要做什么？" @keyup.enter="addTodo" v-model="todo" />
+        </header>
+        <section class="content">
+            <ul class="todo-list">
+                <li class="item" v-for="(item,index) in filterList" @dblclick="editTodo(item,index)">
+                    <input type="text" class="input-font" :style="{display:item.id===editId?'block':'none'}" v-model="item.title" @blur="editDone(item)"
+                        @keyup.enter="editDone" ref="editInput" @keyup.esc="cancelEdit(item)" />
+                    <div class="item-todo" :style="{display:item.id===editId?'none':'block'}">
+                        <span :class="item.completed?'selected-icon':'select-icon'" @click="isComplete(item.id)"></span>
+                        <span :class="item.completed?'font-del':'font'">{{item.title}}</span>
+                        <span class="close-icon" @click="delTodo(item.id)">X</span>
+                    </div>
+                </li>
+            </ul>
+        </section>
+        <div class="foot" :style="{display:haveTodo?'block':'none'}">
+            <span :class="isCheckedAll?'selected-icon':'select-icon'" @click="checkAll">
+            </span>
+            <span class="left-icon">未完成：{{unCheckNum}}</span>
+            <ul class="icon-list">
+                <li class="icon-item">
+                    <a href="#all" :class="hash==='all'?'selected':'select'">全部</a>
+                </li>
+                <li class="icon-item">
+                    <a href="#active" :class="hash==='active'?'selected':'select'">进行中
+                    </a>
+                </li>
+                <li class="icon-item">
+                    <a href="#completed" :class="hash==='completed'?'selected':'select'">已完成
+                    </a>
+                </li>
+            </ul>
+            <button @click="delAllCompleted">删除已完成</button>
+        </div>
+    </div>
+    <script src="./index.js"></script>
+</body>
+</html>
