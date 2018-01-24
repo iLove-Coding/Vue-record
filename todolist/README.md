@@ -25,6 +25,7 @@
 6. 底部未完成处显示当前未完成待办事项的总和
 
 **利用hash实现列表的过滤显示**  
+
 显示列表有三个过滤条件，'全部'，'完成','正在进行',点击底部对应的三个a标签进行切换
 这里使用hash来实现：
 
@@ -34,6 +35,7 @@
 - window.onhashchange事件监听hash的变化，重新获取hash值，若hash值为空，默认为'all'
 
 **localStorage实现本地数据存储**  
+
 最后要解决的问题就是数据的存储，这里使用的是html5的本地存储localStorage对象
 > localStorage：  
 > setItem(key,value)  
