@@ -2,8 +2,8 @@
 > 看到一个很好的网页版待办事项列表（http://www.todolist.cn/）
 > 它的边界之处在于不需要注册就可以使用，数据存储在用户浏览器的html5本地数据库里，简单又安全
 
-所以我就用vue模仿着做了一个，顺便整合一下vue的一些基础知识
-**待办事项的数据结构-dataArr**
+所以我就用vue模仿着做了一个，顺便整合一下vue的一些基础知识  
+**待办事项的数据结构-dataArr**  
 ```
 				    {
     					id:Math.random(), //id
@@ -12,7 +12,7 @@
     				}
 ```
 
-**待办事项列表的主要功能包括：**
+**待办事项列表的主要功能包括：**  
 
 1. 点击输入框输入内容，按下回车键，判断输入内容是否为空，若不为空则添加一条新的待办事项，状态默认为正在进行
 2. 每条待办事项包括勾选，内容，删除图标三部分
@@ -24,7 +24,7 @@
 5. 点击删除已完成，将完成状态下的待办事项全部删除
 6. 底部未完成处显示当前未完成待办事项的总和
 
-**利用hash实现列表的过滤显示**
+**利用hash实现列表的过滤显示**  
 显示列表有三个过滤条件，'全部'，'完成','正在进行',点击底部对应的三个a标签进行切换
 这里使用hash来实现：
 
@@ -33,16 +33,16 @@
 - 在Vue的计算属性中添加一个方法，根据window.location.hash.slice(1)获取的hash值对数据对象进行过滤，返回相应的数据对象
 - window.onhashchange事件监听hash的变化，重新获取hash值，若hash值为空，默认为'all'
 
-**localStorage实现本地数据存储**
+**localStorage实现本地数据存储**  
 最后要解决的问题就是数据的存储，这里使用的是html5的本地存储localStorage对象
-> localStorage：
-> setItem(key,value)
-> getItem(key)
-> 注意:存储数组和对象格式localStorage会自动处理
-> 数组：取出数组中每一项，逗号分隔
-> 对象：转成[object Object]字符串
->--解决办法：
->   存值时 JSON.stringify()手动转字符串，
->   取值时 JSON.parse()转成对象
+> localStorage：  
+> setItem(key,value)  
+> getItem(key)  
+> 注意:存储数组和对象格式localStorage会自动处理  
+> 数组：取出数组中每一项，逗号分隔  
+> 对象：转成[object Object]字符串  
+>--解决办法：  
+>   存值时 JSON.stringify()手动转字符串，  
+>   取值时 JSON.parse()转成对象  
 
-将数据对象存储在localStorage中，并且利用Vue的watch方法深度监控其变化，只要数据对象有变化就更新localStorage
+将数据对象存储在localStorage中，并且利用Vue的watch方法深度监控其变化，只要数据对象有变化就更新localStorage  
